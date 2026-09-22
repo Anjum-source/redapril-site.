@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Red April | Apparel</title>
+<meta name="description" content="Red April is an apparel label. Explore our collections and get in touch for stockist and wholesale enquiries.">
+<meta property="og:title" content="Red April">
+<meta property="og:description" content="An apparel label.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.redapril.com">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23C1121F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone: #F3EEEE;
+    --ink: #1C1416;
+    --red: #C1121F;
+    --red-deep: #8E0D17;
+    --blush: #E9C9C6;
+    --stone: #6F6567;
+    --display: "Bodoni Moda", "Didot", Georgia, serif;
+    --body: "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+    --pad: clamp(1.25rem, 5vw, 4.5rem);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bone);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, p { margin: 0; }
+  a { color: inherit; }
+  img, svg { display: block; max-width: 100%; }
+
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .on-red :focus-visible { outline-color: var(--bone); }
+
+  .wrap { padding-inline: var(--pad); max-width: 90rem; margin-inline: auto; }
+
+  header .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1.5rem; padding-block: 1.5rem; flex-wrap: wrap;
+  }
+  .wordmark {
+    font-family: var(--display);
+    font-size: 1.75rem; font-weight: 600; letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .wordmark span { color: var(--red); }
+  nav { display: flex; gap: 1.75rem; }
+  nav a { text-decoration: none; padding-block: 0.25rem; border-bottom: 1px solid transparent; }
+  nav a:hover { border-bottom-color: var(--red); }
+
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 500;
+    padding: 0.9rem 1.75rem; border-radius: 999px;
+    background: var(--red); color: var(--bone);
+    transition: background 0.2s;
+  }
+  .btn:hover { background: var(--red-deep); }
+  .btn.light { background: var(--bone); color: var(--red-deep); }
+  .btn.light:hover { background: var(--blush); }
+  .link { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .link:hover { color: var(--red); }
+
+  /* The arch: Red April's frame for every garment */
+  .arch {
+    margin: 0;
+    border-radius: 999px 999px 0 0;
+    overflow: hidden;
+    aspect-ratio: 3 / 4.2;
+    display: grid; place-items: center;
+  }
+  .arch svg { width: 62%; height: auto; }
+  .arch img { width: 100%; height: 100%; object-fit: cover; }
+  .arch.red   { background: var(--red);   --line: var(--blush); --fill: rgba(233,201,198,0.18); }
+  .arch.ink   { background: var(--ink);   --line: var(--blush); --fill: rgba(233,201,198,0.12); }
+  .arch.blush { background: var(--blush); --line: var(--red-deep); --fill: rgba(193,18,31,0.14); }
+  .arch svg * { stroke: var(--line); fill: none; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+  .arch svg .garment { fill: var(--fill); }
+
+  /* Hero */
+  .hero .wrap {
+    display: grid; grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(2rem, 6vw, 6rem); align-items: end;
+    padding-top: clamp(1.5rem, 4vw, 3.5rem);
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(2.75rem, 7vw, 6rem);
+    line-height: 1.02; letter-spacing: -0.02em;
+  }
+  .hero p { margin-top: 1.5rem; max-width: 30rem; color: var(--stone); font-size: 1.15rem; }
+  .hero .actions { margin-top: 2.25rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+  .hero .arch { animation: rise 1.1s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes rise { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+  /* Collections */
+  section { padding-block: clamp(4rem, 9vw, 8rem); }
+  h2 {
+    font-family: var(--display); font-weight: 500;
+    font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: 1.08; letter-spacing: -0.015em;
+  }
+  .collections .intro { margin-top: 1rem; color: var(--stone); max-width: 32rem; }
+  .grid {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.25rem, 3vw, 3rem); align-items: start;
+  }
+  .grid article:nth-child(2) { margin-top: clamp(0rem, 6vw, 5rem); }
+  .grid h3 { font-family: var(--display); font-weight: 500; font-size: 1.6rem; margin-top: 1.25rem; }
+  .grid p { color: var(--stone); margin-top: 0.35rem; max-width: 22rem; }
+
+  /* About */
+  .about { background: #fff; }
+  .about .wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  .about p + p { margin-top: 1rem; }
+  .about .text p { color: var(--stone); max-width: 30rem; }
+
+  /* Enquiries */
+  .contact { background: var(--red); color: var(--bone); }
+  .contact .wrap { display: flex; justify-content: space-between; align-items: end; gap: 2rem; flex-wrap: wrap; }
+  .contact p { margin-top: 1rem; max-width: 30rem; color: var(--blush); }
+  .contact .mail { margin-top: 1rem; }
+
+  footer { padding-block: 2.5rem; font-size: 0.95rem; color: var(--stone); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 1rem 2rem; flex-wrap: wrap; align-items: baseline; }
+  footer a { color: var(--ink); }
+  footer a:hover { color: var(--red); }
+
+  @media (max-width: 52rem) {
+    .hero .wrap, .about .wrap { grid-template-columns: 1fr; }
+    .hero .arch { max-width: 26rem; }
+    .grid { grid-template-columns: 1fr; max-width: 26rem; }
+    .grid article:nth-child(2) { margin-top: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero .arch { animation: none; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <a class="wordmark" href="#top">Red April<span>.</span></a>
+      <nav aria-label="Main">
+        <a href="#collections">Collections</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="wrap">
+        <div>
+          <h1>Everyday clothes, made with care.</h1>
+          <p>Red April is an apparel label. Thoughtful cuts, honest fabrics and finishing you can feel.</p>
+          <div class="actions">
+            <a class="btn" href="#collections">See the collections</a>
+            <a class="link" href="#contact">Stockist enquiries</a>
+          </div>
+        </div>
+
+        <!-- To use a real photo, replace the <svg> below with:
+             <img src="images/hero.jpg" alt="Describe the outfit"> -->
+        <figure class="arch red">
+          <svg viewBox="0 0 200 300" role="img" aria-label="Illustration of a dress on a hanger">
+            <path d="M100 42 V34 a7 7 0 1 0 -7 -7"/>
+            <path d="M100 42 L28 82 H172 Z"/>
+            <path class="garment" d="M70 84 L84 86 Q100 102 116 86 L130 84 L140 104 L122 114 L128 152 L162 272 Q100 288 38 272 L72 152 L78 114 L60 104 Z"/>
+            <path d="M74 152 Q100 160 126 152"/>
+          </svg>
+        </figure>
+      </div>
+    </div>
+
+    <!-- COLLECTIONS -->
+    <section class="collections" id="collections">
+      <div class="wrap">
+        <h2>Collections</h2>
+        <p class="intro">Three ways into the Red April wardrobe. Replace these with your own collections and photographs.</p>
+
+        <div class="grid">
+          <article>
+            <figure class="arch red">
+              <svg viewBox="0 0 200 300" role="img" aria-label="Illustration of a tunic on a hanger">
+                <path d="M100 42 V34 a7 7 0 1 0 -7 -7"/>
+                <path d="M100 42 L28 82 H172 Z"/>
+                <path class="garment" d="M68 84 L84 86 Q100 100 116 86 L132 84 L154 122 L134 132 L132 256 L68 256 L66 132 L46 122 Z"/>
+                <path d="M100 100 V256"/>
+              </svg>
+            </figure>
+            <h3>Everyday</h3>
+            <p>Easy pieces for work, weekends and everything between.</p>
+          </article>
+
+          <article>
+            <figure class="arch ink">
+              <svg viewBox="0 0 200 300" role="img" aria-label="Illustration of an occasion dress on a hanger">
+                <path d="M100 42 V34 a7 7 0 1 0 -7 -7"/>
+                <path d="M100 42 L28 82 H172 Z"/>
+                <path class="garment" d="M76 84 L88 86 Q100 96 112 86 L124 84 L128 122 L118 138 L170 276 Q100 290 30 276 L82 138 L72 122 Z"/>
+                <path d="M72 122 H128"/>
+              </svg>
+            </figure>
+            <h3>Occasion</h3>
+            <p>Dressed-up silhouettes for celebrations and evenings out.</p>
+          </article>
+
+          <article>
+            <figure class="arch blush">
+              <svg viewBox="0 0 200 300" role="img" aria-label="Illustration of a co-ord set on a hanger">
+                <path d="M100 42 V34 a7 7 0 1 0 -7 -7"/>
+                <path d="M100 42 L28 82 H172 Z"/>
+                <path class="garment" d="M70 84 L84 86 Q100 98 116 86 L130 84 L148 110 L130 118 L128 152 L72 152 L70 118 L52 110 Z"/>
+                <path class="garment" d="M76 164 H124 L144 284 H104 L100 196 L96 284 H56 Z"/>
+              </svg>
+            </figure>
+            <h3>Co-ord sets</h3>
+            <p>Matching tops and trousers, designed to be worn together.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="wrap">
+        <h2>A label built around fit, fabric and finish.</h2>
+        <div class="text">
+          <p>Every Red April piece starts with the same question: will it be worn again and again?</p>
+          <p>Add your own story here: who designs the clothes, where they are made, and what makes the label different.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact on-red" id="contact">
+      <div class="wrap">
+        <div>
+          <h2>Stockist and wholesale enquiries</h2>
+          <p>Write to us for catalogues, price lists and appointments to view the collection.</p>
+        </div>
+        <a class="btn light mail" href="mailto:hello@redapril.com">hello@redapril.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 Red April</span>
+      <span>Red April is part of <a href="https://www.daksindia.com" rel="noopener">DAKS India</a></span>
+    </div>
+  </footer>
+
+</body>
+</html>
